@@ -1,0 +1,38 @@
+
+spring:
+  profiles:
+    active: dev
+
+---
+environment: dev
+email: dev@test.com
+spring:
+  profiles: dev
+  datasource:
+    cspdb:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+      username: "testuser"
+      password: "testuser"
+    pandb:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+      username: "testuser"
+      password: "testuser"
+
+---
+environment: qa
+email: qa@test.com
+spring:
+  profiles: qa
+  datasource:
+    cspdb:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+      username: "testuser"
+      password: "testuser"
+    pandb:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+      username: "testuser"
+      password: "testuser"
