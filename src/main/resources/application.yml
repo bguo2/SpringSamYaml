@@ -2,6 +2,9 @@
 spring:
   profiles:
     active: dev
+server:
+  servlet:
+    context-path: "/sample/samplesvc"
 
 ---
 environment: dev
@@ -9,12 +12,12 @@ email: dev@test.com
 spring:
   profiles: dev
   datasource:
-    cspdb:
+    testdb1:
       driverClassName: com.mysql.cj.jdbc.Driver
       jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
       username: "testuser"
       password: "testuser"
-    pandb:
+    testdb2:
       driverClassName: com.mysql.cj.jdbc.Driver
       jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
       username: "testuser"
@@ -26,12 +29,12 @@ email: qa@test.com
 spring:
   profiles: qa
   datasource:
-    cspdb:
+    testdb1:
       driverClassName: com.mysql.cj.jdbc.Driver
       jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
       username: "testuser"
       password: "testuser"
-    pandb:
+    testdb2:
       driverClassName: com.mysql.cj.jdbc.Driver
       jdbcUrl: "jdbc:mysql://localhost:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
       username: "testuser"

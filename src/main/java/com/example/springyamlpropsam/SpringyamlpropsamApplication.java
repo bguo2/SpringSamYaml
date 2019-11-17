@@ -12,15 +12,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 
 @SpringBootApplication
-public class SpringyamlpropsamApplication implements CommandLineRunner {
+public class SpringyamlpropsamApplication {
 
     @Autowired
     private ConfigProperties config;
 
     @Autowired
-    @Qualifier("cspDbJdbcTemplate")
+    @Qualifier("testDb1JdbcTemplate")
     private JdbcTemplate cspdb;
 
+    public static void main(String[] args) {
+        SpringApplication.run(SpringyamlpropsamApplication.class, args);
+    }
+
+    /*
     public static void main(String[] args) {
         SpringApplication.run(SpringyamlpropsamApplication.class, args).close();
     }
@@ -39,4 +44,5 @@ public class SpringyamlpropsamApplication implements CommandLineRunner {
         }
 
     }
+    */
 }

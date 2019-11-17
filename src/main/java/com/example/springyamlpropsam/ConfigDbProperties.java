@@ -17,30 +17,30 @@ public class ConfigDbProperties {
 
     @Bean
     @Primary
-    @ConfigurationProperties(prefix = "spring.datasource.cspdb")
-    public DataSource cspDbDatasource()
+    @ConfigurationProperties(prefix = "spring.datasource.testdb1")
+    public DataSource testDb1Datasource()
     {
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    public JdbcTemplate cspDbJdbcTemplate()
+    public JdbcTemplate testDb1JdbcTemplate()
     {
-        DataSource ds = cspDbDatasource();
+        DataSource ds = testDb1Datasource();
         return new JdbcTemplate(ds);
     }
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.pandb")
-    public DataSource panDbDbDatasource()
+    @ConfigurationProperties(prefix = "spring.datasource.testdb2")
+    public DataSource testDb2Datasource()
     {
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    public JdbcTemplate pandbDbJdbcTemplate()
+    public JdbcTemplate testDb2JdbcTemplate()
     {
-        DataSource ds = panDbDbDatasource();
+        DataSource ds = testDb2Datasource();
         return new JdbcTemplate(ds);
     }
 }
