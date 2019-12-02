@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @SpringBootApplication
-public class SpringyamlpropsamApplication implements CommandLineRunner {
+public class SpringyamlpropsamApplication {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -29,13 +29,13 @@ public class SpringyamlpropsamApplication implements CommandLineRunner {
     @Qualifier("testDb1JdbcTemplate")
     private JdbcTemplate testDb;
 
-    /*
+
     public static void main(String[] args) {
         SpringApplication.run(SpringyamlpropsamApplication.class, args);
     }
-    */
 
 
+/*
     public static void main(String[] args) {
         SpringApplication.run(SpringyamlpropsamApplication.class, args).close();
     }
@@ -53,11 +53,12 @@ public class SpringyamlpropsamApplication implements CommandLineRunner {
                 System.out.println(user.getId() + ", " + user.getName() + ", " + user.getEmail());
             }
         }
-        */
+
 
         asynchTest();
         logger.info("test done");
-    }
+
+    }*/
 
     private void asynchTest() {
         Executor executor = Executors.newFixedThreadPool(10);
